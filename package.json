@@ -3,12 +3,24 @@
   "version": "1.0.0",
   "description": "A set of helper functions for organizing your state into modules",
   "main": "lib/index.js",
+  "files": ["lib"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cchanna/redux-state-tools.git"
+  },
   "scripts": {
-    "test": "npm run jest"
+    "test": "npm run jest",
+    "build": "babel src -d lib",
+    "prepublishOnly": "npm run build" 
   },
   "keywords": [
     "redux"
   ],
   "author": "strangerelics",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
 }
