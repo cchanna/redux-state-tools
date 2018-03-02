@@ -11,6 +11,7 @@ npm i --save redux-state-tools
 Lets say we are building a simple todo list application, where we can create todos, and then clear all of them at once. We'll start with our todo state.
 ```js
 // src/state/todos.js
+
 import { combineReducers } from 'redux';
 
 const ADD = "ADD";
@@ -63,6 +64,7 @@ Now, let's look at the interface for our whole state module. The reducer exporte
 
 ```js
 // src/state/index.js
+
 import { combineReducers } from 'redux';
 import { 
   prefixedReducer, 
@@ -83,6 +85,7 @@ And here's how we'd use it in a redux container component in react:
 
 ```js
 // src/containers/todos.js
+
 import { connect } from 'react-redux';
 import { fromTodos, forTodos } = '../state';
 import Todos from '../components/Todos.js';
@@ -107,7 +110,7 @@ By following this stucture, all knowledge of how the state is modified and acces
 
 ### `makeActionCreators(actions)`
 Takes an object describing a collection of action creators for transforming the
-state. Each action creator is either a single string for the actino type, or an
+state. Each action creator is either a single string for the action type, or an
 array with the type of the first element, followed by a list of property names
 to be passed through to the action object.
 
