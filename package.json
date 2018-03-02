@@ -1,0 +1,14 @@
+{
+  "name": "redux-state-tools",
+  "version": "1.0.0",
+  "description": "A set of helper functions for organizing your state into modules",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run jest"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "strangerelics",
+  "license": "MIT"
+}
