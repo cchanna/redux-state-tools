@@ -71,6 +71,9 @@ export const prefixedActionCreators = (prefix, actions) => makeActionCreators(pr
 export const prefixedSelectors = (prefix, selectors) => 
   mapObject(selectors, selector => (state, ...args) => selector(state[prefix], ...args));
 
+export const wrappedSelectors = (wrapper, selectors) => 
+  mapObject(selectors, selector => (state, ...args) => selector(wrapper(state), ...args));
+
 export const makeMiddleware = (key, func) => {
   return ({ dispatch, getState }) => next => actionIn => {
     if (actionIn["!" + key]) {
